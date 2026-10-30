@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 const ProductCard = ({products,onAddToCart}) => {
   return (
@@ -7,11 +9,11 @@ const ProductCard = ({products,onAddToCart}) => {
   {products.map((product) => (
     <article key={product.id} className="group">
       <div className="overflow-hidden rounded-xl bg-[#eee7df]">
-        <img
+       <Link to={`/product/${product.id}`}> <img
           src={product.image}
           alt={product.name}
           className="h-80 w-full object-cover transition duration-500 group-hover:scale-105"
-        />
+        /></Link>
       </div>
 
       <p className="mt-4 text-sm text-[#a87952]">
